@@ -12,6 +12,7 @@ using Persistence;
 
 namespace API
 {
+    // this program creates the database
     public class Program
     {
         public static async Task Main(string[] args)
