@@ -14,7 +14,7 @@ namespace Application.Activities
             public Activity Activity { get; set; }
         }
 
-        public class Handler : IRequestHandler<Command>
+        public class Handler : IRequestHandler<Command> //here we specify we want to do a COMMAND to tell the database to update
         {
             private readonly DataContext _context;
             private readonly IMapper _mapper;

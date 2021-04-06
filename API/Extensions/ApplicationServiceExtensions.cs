@@ -31,7 +31,7 @@ namespace API.Extensions
             });
             services.AddMediatR(typeof(List.Handler).Assembly); //this tells mediatr where to find our handlers
             services.AddAutoMapper(typeof(MappingProfiles).Assembly);
-            return services
+            return services;
         }
         
     }
