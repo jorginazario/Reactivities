@@ -12,7 +12,7 @@ export default function ActivityDetails({activity, cancelSelectActivity, openFor
   return (
     <Card fluid>
         {/* if the activity object is null it won't be able to access the image below */}
-      <Image src={`/assets/categoryImages/${activity!.category}.jpg`} />
+      <Image src={`/assets/categoryImages/${activity.category}.jpg`} />
       <Card.Content>
         <Card.Header>{activity!.title}</Card.Header>
         <Card.Meta>

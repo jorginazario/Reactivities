@@ -16,6 +16,7 @@ interface Props {
   closeForm: () => void;
   createOrEdit: (activity: Activity) => void;
   deleteActivity: (id: string) => void;
+  submitting: boolean;
 }
 
 // interface Props {
@@ -31,7 +32,8 @@ export default function ActivityDashboard({
   openForm,
   closeForm,
   createOrEdit,
-  deleteActivity
+  deleteActivity, 
+  submitting
 }: Props) {
   // I am passing down a property to my React component. In this case the prop is going to be called activities and it will be of type Props, defined above
   return (
@@ -41,7 +43,7 @@ export default function ActivityDashboard({
         <ActivityList activities={activities} 
           selectActivity={selectActivity} 
           deleteActivity={deleteActivity}
-          
+          submitting={submitting}
         />
       </Grid.Column>
       <Grid.Column width="6">
@@ -56,7 +58,11 @@ export default function ActivityDashboard({
           />
         )}
         {editMode && (
-          <ActivityForm closeForm={closeForm} activity={selectedActivity} createOrEdit={createOrEdit} />
+          <ActivityForm closeForm={closeForm} 
+            activity={selectedActivity} 
+            createOrEdit={createOrEdit} 
+            submitting={submitting}
+          />
         )}
       </Grid.Column>
     </Grid>
