@@ -1,5 +1,6 @@
 import { observer } from "mobx-react-lite";
 import React, { SyntheticEvent, useState } from "react";
+import { Link } from "react-router-dom";
 import { Button, Item, Label, Segment } from "semantic-ui-react";
 import { useStore } from "../../../app/stores/store";
 
@@ -37,10 +38,15 @@ export default observer( function ActivityList() {
                 <Item.Extra>
                     {/* the button below triggers the function handleSelectActivity() from the App.tsx which is responsible for updating our React Hook variable selectedActivity */}
                     {/* Once the selectedActivity is set, React automatically updates all the components that read data from it */}
-                    <Button content='View' 
+                    {/* <Button content='View' 
                       floated='right' 
                       color='blue' 
                       onClick={() => (activityStore.selectActivity(activity.id))} 
+                    /> */}
+                    <Button content='Open View' 
+                      floated='right' 
+                      color='blue' 
+                      as={Link} to={`/activities/${activity.id}`}
                     />
                     <Button content='Delete'
                       name={activity.id}
